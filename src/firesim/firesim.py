@@ -1,3 +1,5 @@
+import numpy as np
+
 from twisted.internet import reactor
 from twisted.internet.task import LoopingCall
 
@@ -9,7 +11,7 @@ class FireSim:
 
     def __init__(self, numLights=64):
         self.numLights = numLights
-        self.lights = [[0 for i in range(3)] for j in range(numLights)]
+        self.lights = np.zeros((numLights, 3), dtype=int)
         self.gui = SimWindow(self)
 
     def guiTick(self):
