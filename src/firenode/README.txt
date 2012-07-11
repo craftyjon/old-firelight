@@ -1,0 +1,1 @@
+FireNode is the firmware for the strand controller nodes.

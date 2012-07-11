@@ -1,0 +1,1 @@
+Firelight is the main GUI app for controlling the system
