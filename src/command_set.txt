@@ -1,0 +1,23 @@
+General notes:
+
+Return codes:
+0x00 = SUCCESS
+0xFF = FAILURE
+
+
+
+Commands TO FireServe:
+
+
+Commands TO listeners (FROM FireServe):
+
+Command		Args						Return							Description
+---------------------------------------------------------------------------------
+0x40		(none)						0x00 / 0xFF						Reset node
+0x41		(none)						uint16_t						Get number of lights
+0x42		(none)						uint16_t						Get firmware version
+0x43		(none)						uint16_t						Get protocol version
+0x44		(none)						(3 * numLights) * uint8_t		Get all current setpoints
+0x45		uint16_t, (3 * uint8_t)		0x00 / 0xFF						Set single light
+0x46		(3 * uint8_t)				0x00 / 0xFF						Set all lights to single color
+0x47		(3 * numLights) * uint8_t	0x00 / 0xFF						Set all lights (array)

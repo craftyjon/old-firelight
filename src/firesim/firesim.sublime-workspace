@@ -1,0 +1,522 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"current_",
+				"current_preset_obj"
+			],
+			[
+				"icon",
+				"icon-eye-close"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "firesim.py",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "simwindow.py",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/User/Kivy.sublime-build",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"discover",
+				"Package Control: Discover Packages"
+			],
+			[
+				"disable lin",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"linting",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"comment",
+				"Toggle Comment"
+			],
+			[
+				"terminal",
+				"Preferences: Terminal Settings – Default"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"lint",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"git gui",
+				"Git: Gui"
+			],
+			[
+				"git c c",
+				"Git: Custom Command"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"git b",
+				"Git: Change Branch"
+			],
+			[
+				"git",
+				"Git: Gui"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"git che",
+				"Git: Change Branch"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"disc",
+				"Package Control: Discover Packages"
+			],
+			[
+				"list packages",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 522.0
+	},
+	"console":
+	{
+		"height": 124.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/jonathan.evans/Documents/kivy_demo.py",
+		"/C/GitRoot/ANIHardware/anihardware/PyHardwareTest/test.py",
+		"/C/CVSRoot/iDPP_Python_Utils/Lib/DPP_HT.py",
+		"/C/Users/jonathan.evans/Documents/tempco/tempco.py",
+		"/C/Users/jonathan.evans/AppData/Roaming/Sublime Text 2/Packages/User/Kivy.sublime-build",
+		"/C/Users/jonathan.evans/AppData/Roaming/Sublime Text 2/Packages/Python/Python.sublime-build",
+		"/C/Users/jonathan.evans/Downloads/kivy-1.3.0/kivy.bat",
+		"/C/Users/jonathan.evans/Documents/atsam3_144fbga.txt",
+		"/C/GitRoot/adc.txt",
+		"/W/ELECTRICAL/103328 PCB ASSY, IDPP-HT/Rev 5/Design/Layout_JEE_2012-01-03/103327R5_0.asc",
+		"/C/GitRoot/filterdesign.py",
+		"/C/GitRoot/bfd.py",
+		"/C/CVSRoot/iDPP_FPGA_TrueTrapezoid/adc_mn.txt",
+		"/W/ELECTRICAL/PROJECT FILES/DPP-HT/PulseMaker/pulsemaker.py",
+		"/C/CVSRoot/iDPP_FPGA_TrueTrapezoid/ADC_TRACE.txt",
+		"/C/CVSRoot/iDPP_FPGA_TrueTrapezoid/adc_data.txt",
+		"/C/Users/jonathan.evans/Downloads/LT3957_DC1544A.asc",
+		"/C/Program Files (x86)/boost/boost_1_49_0/tools/build/v2/user-config.jam",
+		"/C/Program Files (x86)/boost/boost_1_49_0/VSVars32-VC9-WM6.bat",
+		"/C/Program Files (x86)/boost/boost_1_49_0/boost-build.jam",
+		"/C/Program Files (x86)/boost/boost_1_49_0/project-config.jam",
+		"/C/Users/jonathan.evans/AppData/Roaming/Sublime Text 2/Packages/Terminal/Terminal.sublime-settings",
+		"/C/Users/jonathan.evans/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/jonathan.evans/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/jonathan.evans/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/C/Users/jonathan.evans/Documents/tempco/tempco.spec",
+		"/C/Users/jonathan.evans/Downloads/ADSP-BF561_ I2C Protocol Example C/Core A/main A.c",
+		"/C/Users/jonathan.evans/Downloads/ADSP-BF561_ I2C Protocol Example C/Core A/I2C Pin Access.h",
+		"/C/Users/jonathan.evans/Downloads/ADSP-BF561_ I2C Protocol Example C/Core A/I2C State Machine.h",
+		"/C/Users/jonathan.evans/Downloads/ADSP-BF561_ I2C Protocol Example C/Core A/I2C State Machine.c",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/INXHardware/Port.cpp",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/INXHardware/DPP.cpp",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/Components/IMX31_I2C.h",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/Components/IMX31_I2C.cpp",
+		"/C/Users/jonathan.evans/AppData/Local/Temp/Temp1_vcp2 (1).zip/VCP/src/usbd_usr.c",
+		"/C/Users/jonathan.evans/AppData/Local/Temp/Temp1_vcp2 (1).zip/VCP/src/usb_bsp.c",
+		"/C/Users/jonathan.evans/AppData/Local/Temp/Temp1_vcp2 (1).zip/VCP/src/usbd_desc.c",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/INXHardware/Port.h",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/DLHDriver/DLHDriver/DLHDriver.h",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/INXHardware/COMEnum.h",
+		"/C/GitRoot/ANIHardware/anihardware/.gitignore",
+		"/C/Users/jonathan.evans/AppData/Local/Temp/Temp1_vcp2 (1).zip/VCP/src/usbd_cdc_vcp.c",
+		"/C/GitRoot/STM32_Test/system_stm32f4xx.c",
+		"/C/Users/jonathan.evans/AppData/Local/Temp/Temp1_vcp2 (1).zip/VCP/src/main.c",
+		"/C/Users/jonathan.evans/Documents/hwapi_review_20120612.h",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/INXHardware/HWBoard.cpp",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/DLHDriver/DLHDriver/usbclient.h",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/DLHDriver/DLHDriver/usbclient.cpp",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/DLHDriver/DLHDriver/DLHIO.cpp",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/DLHDriver/DLHDriver/DLHDriver.cpp",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/INXHardware/USBPort.cpp",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/INXHardware/COMEnum.cpp",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/INXHardware/USBPort.h",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/INXHardware/DPP.h",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/DLHDriver/DLHDriver/ReadMe.txt",
+		"/C/GitRoot/ANIHardware/anihardware/lib/libusb-win32-bin-1.2.6.0/lib/dynamic/libusb_dyn.c",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/INXHardware/InnovxDPP.cpp",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/Components/i2cbus.h",
+		"/C/GitRoot/ANIHardware/anihardware/lib/boost/date_time/c_time.hpp",
+		"/C/Users/jonathan.evans/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/LZVNG3K4/Gpio_Interrupts.c",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/DeltaTools/CDeltaToolsDPP.cpp",
+		"/C/CVSRoot/iDPP_Python_Utils/Keygen.py",
+		"/C/CVSRoot/InnovX Pre2.0-Delta2/INXHardware/i2cbus.h",
+		"/C/GitRoot/ANIHardware/anihardware/lib/boost/detail/interlocked.hpp",
+		"/C/GitRoot/ANIHardware/anihardware/lib/boost/assert.hpp",
+		"/C/Program Files (x86)/boost/boost_1_49_0/tools/build/v2/tools/msvc.jam",
+		"/C/Program Files (x86)/boost/boost_1_49_0/tools/build/v2/build/targets.py",
+		"/C/Program Files (x86)/boost/boost_1_49_0/tools/build/v2/build/toolset.jam",
+		"/C/GitRoot/ANIHardware/anihardware/lib/stlport-5.2.1/configure.bat",
+		"/C/GitRoot/ANIHardware/structure_layout.txt",
+		"/C/Users/jonathan.evans/Documents/stm32/STM32_F105-07_F2xx_USB-Host-Device_Lib_V2.0.0/Project/USB_Device_Examples/VCP/src/usbd_cdc_vcp.c",
+		"/C/Users/jonathan.evans/Documents/stm32/STM32_F105-07_F2xx_USB-Host-Device_Lib_V2.0.0/Project/USB_Device_Examples/VCP/src/app.c",
+		"/C/Users/jonathan.evans/Documents/stm32/STM32_F105-07_F2xx_USB-Host-Device_Lib_V2.0.0/Project/USB_Device_Examples/VCP/inc/usb_conf.h",
+		"/C/Users/jonathan.evans/Documents/stm32/STM32_F105-07_F2xx_USB-Host-Device_Lib_V2.0.0/Project/USB_Device_Examples/VCP/src/usbd_usr.c",
+		"/C/Users/jonathan.evans/Documents/STM32_USB-Host-Device_Lib_V2.1.0/Project/USB_Device_Examples/VCP/src/app.c",
+		"/C/Users/jonathan.evans/AppData/Local/Temp/Temp1_LTC3589_Linux_Driver.zip/LTC3589 Linux Driver/src/ltc3589_driver/drivers/regulator/ltc3589-regulator.c",
+		"/C/Program Files (x86)/CodeSourcery/Sourcery_CodeBench_Lite_for_ARM_EABI/arm-none-eabi/include/stdint.h",
+		"/C/Users/jonathan.evans/eclipse/plugins/org.eclipse.cdt.embsysregview_0.1.9.90/data/cortex-m4/STMicro/stm32f4x.xml",
+		"/W/STM32 Software/Installation Notes.txt",
+		"/C/Users/jonathan.evans/eclipse/plugins/org.eclipse.cdt.embsysregview_0.1.9.90/data/cortex-m4/STMicro/embsysregview.dtd",
+		"/C/GitRoot/STM32_Test/Debug/lib/STM32F4xx_StdPeriph_Driver/src/subdir.mk",
+		"/C/GitRoot/STM32_Test/stm32_flash.ld",
+		"/C/GitRoot/STM32_Test/Debug/sources.mk",
+		"/C/GitRoot/STM32_Test/Debug/subdir.mk",
+		"/C/GitRoot/STM32_Test/Debug/makefile",
+		"/C/GitRoot/STM32_Test/Debug/objects.mk",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/mixer.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/server.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/rpc.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/patterngen.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/pgui.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/demo.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/message.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/web/templates/base.tpl",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/db_bootstrap.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/frame.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/outputmap.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/particle.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/timebase/timebase.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/timebase/audiodata.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/timebase/beatdetector.py",
+		"/C/Users/jonathan.evans/AppData/Roaming/Sublime Text 2/Pristine Packages/Python.sublime-package",
+		"//inx-ps01/share/client-license.dat",
+		"/C/CVSRoot/iDPP_HT-10 Feb 2012/iDPP_HT.c",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/.gitignore",
+		"/C/Python27/Lib/site-packages/scipy/signal/filter_design.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/presets/particletest.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/timebase/metronome.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/presets/starrynight.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/presets/colorstatic.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/web/test_client.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/README",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/presets/__init__.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/events.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/web/server.py",
+		"/C/Users/jonathan.evans/Documents/workspace/openlights/patterngen/web/__init__.py",
+		"/C/Users/jonathan.evans/.ssh/id_rsa",
+		"/C/Users/jonathan.evans/.ssh/id_rsa.pub",
+		"/C/CVSRoot/PIC/PCB-DELTA/monitor.c",
+		"/C/CVSRoot/PIC/DOCK-DELTA/monitor.c",
+		"/C/CVSRoot/PIC/PCB-DELTA/a2d.h",
+		"/C/CVSRoot/PIC/PCB-DELTA/boardcon.h",
+		"/C/CVSRoot/PIC/PCB-DELTA/init.c",
+		"/C/CVSRoot/PIC/PCB-DELTA/innovx.c",
+		"/C/CVSRoot/PIC/PCB-DELTA/a2d.c",
+		"/C/Users/jonathan.evans/AppData/Local/Temp/Temp1_PIC_Hi-Tech_C_I2C_for_EEPROM_24LC01B.zip/877_i2~1.c",
+		"/C/Users/jonathan.evans/AppData/Local/Temp/Temp1_PIC_Hi-Tech_C_I2C_for_24LC01_and_Dalla_temp.zip/ee.c",
+		"/C/CVSRoot/DCM_V2/DSP/set_PLL.c"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"<open folders>",
+			"*.py",
+			"C:\\Users\\jonathan.evans\\Documents\\workspace\\openlights\\patterngen\\*.py",
+			"C:\\Users\\jonathan.evans\\Documents\\workspace\\openlights\\patterngen"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"U17",
+			"	",
+			"\\t",
+			"\"../assets",
+			"deriv",
+			"(ADI_DSP)\\Blackfin\\lib\\src\\drivers\\usb",
+			"(\" ",
+			"(\"[DPP_HT]",
+			"log\\((.*), INFO\\)",
+			"log\\((.*), WARN\\)",
+			"log\\((.*), ERROR\\)",
+			"log\\(\\\"(.*), ERROR\\)",
+			"log(\"",
+			"dppPresent",
+			"self.dppPresent",
+			"setParams(",
+			"getParams(",
+			"stopMCA(",
+			"startMCA(",
+			"starttMCA(",
+			"resetMCA(",
+			"readMCA(",
+			"readFPGADNA(",
+			"updateStatistics(",
+			"getVersionString(",
+			"getVersion(",
+			"usbWritePipe(",
+			"usbReadPipe(",
+			"usbRead(",
+			"usbWrite(",
+			"usbWrite",
+			"usbWrite(",
+			"MODE_NONE",
+			"0x(.*),",
+			"self\\.(.*)\\ = 0.*#\\ 0x(.*)",
+			"CFUNCTYPE",
+			"WINFUNCTYPE",
+			"men_dpp",
+			"trig_adc",
+			"slope = ",
+			"log",
+			"print",
+			"chart",
+			"']",
+			"params['",
+			"']",
+			"params['",
+			"']",
+			"WriteText",
+			"        ",
+			"    ",
+			"*/",
+			"/*",
+			"sqrt",
+			"double",
+			"fitGauss",
+			"range"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"    ",
+			"\"/static",
+			".\\usb",
+			"(\"",
+			"info($1)",
+			"warn($1)",
+			"error($1)",
+			"log(\"[DPP_HT] ",
+			"dpp_present",
+			"self.dpp_present",
+			"set_params(",
+			"get_params(",
+			"stop_mca(",
+			"start_mca(",
+			"reset_mca(",
+			"read_mca(",
+			"read_fpga_dna(",
+			"update_statistics(",
+			"get_version_string(",
+			"get_version(",
+			"usb_write_pipe(",
+			"usb_read_pipe(",
+			"usb_read(",
+			"usb_write(",
+			"0,",
+			"'$1': 0x$2,",
+			"WINFUNCTYPE",
+			"CFUNCTYPE",
+			"",
+			"params.",
+			"",
+			"params.",
+			"params",
+			"",
+			"SetValue",
+			"\\t",
+			"",
+			"#",
+			"float",
+			"binRange"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "firesim.py",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "simwindow.py",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 98.0
+	},
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 153.0,
+	"status_bar_visible": true
+}
