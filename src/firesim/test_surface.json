@@ -4,9 +4,8 @@
 		"num_pixels" : 32,
 		"channels_per_pixel" : 3,
 		"bits_per_channel" : 8,
-		"boundbox" : "66,6",
+		"boundbox" : "68,6",
 		"pixel_locations" : [
-			"0,3",
 			"2,3",
 			"4,3",
 			"6,3",
@@ -38,13 +37,14 @@
 			"58,3",
 			"60,3",
 			"62,3",
-			"64,3"
+			"64,3",
+			"66,3"
 		]
 	}],
 
 	"surface" : {
 		"name" : "Test Surface",
-		"dimensions" : "320,240",
+		"dimensions" : "640,480",
 		"strands" : [
 			{
 				"name" : "Strand1",
@@ -65,17 +65,17 @@
 						"id" : 1,
 						"offset" : 32,
 						"type" : "Openlights_32LED_Bar",
-						"tl" : "150,150",
-						"scale" : 2.5,
+						"tl" : "200,220",
+						"scale" : 4.0,
 						"angle" : -135.0
 					},
 					{
 						"id" : 2,
 						"offset" : 64,
 						"type" : "Openlights_32LED_Bar",
-						"tl" : "100,50",
+						"tl" : "170,200",
 						"scale" : 3.0,
-						"angle" : 65.0
+						"angle" : -35.0
 					}
 				]
 			}

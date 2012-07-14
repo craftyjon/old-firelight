@@ -4,6 +4,40 @@ import sys
 import json
 import colorsys
 
+config_surface = {}
+colorshift = 0.0
+
+
+def redraw():
+    global colorshift, config_surface6
+    strands = config_surface["strands"]
+    for strand in strands:
+
+        for fixture in strand["fixtures"]:
+
+            fixture_type = config_fixture_types[next(index for (index, d) in enumerate(config_fixture_types) if d["name"] == fixture["type"])]
+            (bbox_x, bbox_y) = map(int, fixture_type["boundbox"].split(','))
+
+            ts = pygame.Surface((bbox_x, bbox_y))
+            ts.fill((50, 50, 50))
+
+            np = len(fixture_type["pixel_locations"]) / 2.0
+            n = 0
+
+            for loc in fixture_type["pixel_locations"]:
+                x, y = map(int, loc.split(','))
+                h = (float(n) / np) + colorshift
+                (r, g, b) = map(lambda f: int(255.0 * f), colorsys.hsv_to_rgb(h, 1.0, 1.0))
+                pygame.draw.circle(ts, (r, g, b), (x, y), 1, 0)
+                n += 1
+
+            tlx, tly = map(int, fixture["tl"].split(','))
+            angle = float(fixture["angle"])
+            scale = float(fixture["scale"])
+
+            positions[fixture["id"]] = [tlx, tly, angle, scale]
+            render_surfaces[fixture["id"]] = ts
+    colorshift += 0.003
 
 if __name__ == '__main__':
     json_data = open("test_surface.json")
@@ -33,39 +67,7 @@ if __name__ == '__main__':
 
     render_surfaces = {}
     positions = {}
-
-    strands = config_surface["strands"]
-    for strand in strands:
-        print "Drawing strand " + str(strand["name"])
-
-        for fixture in strand["fixtures"]:
-            print "Drawing fixture " + str(fixture["id"])
-
-            fixture_type = config_fixture_types[next(index for (index, d) in enumerate(config_fixture_types) if d["name"] == fixture["type"])]
-            (bbox_x, bbox_y) = map(int, fixture_type["boundbox"].split(','))
-
-            ts = pygame.Surface((bbox_x, bbox_y))
-            ts.fill((50, 50, 50))
-
-            np = len(fixture_type["pixel_locations"])
-            n = 0
-
-            for loc in fixture_type["pixel_locations"]:
-                x, y = map(int, loc.split(','))
-                h = float(n) / np
-                (r, g, b) = map(lambda f: int(255.0 * f), colorsys.hsv_to_rgb(h, 1.0, 1.0))
-                pygame.draw.circle(ts, (r, g, b), (x, y), 2, 0)
-                n += 1
-
-
-            tlx,tly = map(int, fixture["tl"].split(','))
-            angle = float(fixture["angle"])
-            scale = float(fixture["scale"])
-
-            positions[fixture["id"]] = [tlx, tly, angle, scale]
-            render_surfaces[fixture["id"]] = ts
-
-    print "Setup done"
+    clock = pygame.time.Clock()
 
     while True:
         event = pygame.event.poll()
@@ -75,12 +77,8 @@ if __name__ == '__main__':
             if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
                 sys.exit(0)
 
-        #if event.type == pygame.USEREVENT:
-        #    try:
-        #        pygame.surfarray.blit_array(s, pg.mixer.get_frame().buffer)
-         #   except:
-        #        pg.stop()
-        #        sys.exit()
+
+        redraw()
 
         for key, s in render_surfaces.iteritems():
 
@@ -89,4 +87,6 @@ if __name__ == '__main__':
             sc.blit(s, (positions[key][0], positions[key][1]))
 
         screen.blit(sc, sc.get_rect())
+        clock.tick(60)
+        pygame.display.set_caption('%d fps' % clock.get_fps())
         pygame.display.flip()
