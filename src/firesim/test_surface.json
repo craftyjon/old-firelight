@@ -4,7 +4,7 @@
 		"num_pixels" : 32,
 		"channels_per_pixel" : 3,
 		"bits_per_channel" : 8,
-		"boundbox" : "66,5",
+		"boundbox" : "66,6",
 		"pixel_locations" : [
 			"0,3",
 			"2,3",
@@ -57,7 +57,7 @@
 						"id" : 0,
 						"offset" : 0,
 						"type" : "Openlights_32LED_Bar",
-						"tl" : "100,100",
+						"tl" : "35,40",
 						"scale" : 2.0,
 						"angle" : 0.0
 					},
@@ -65,17 +65,17 @@
 						"id" : 1,
 						"offset" : 32,
 						"type" : "Openlights_32LED_Bar",
-						"tl" : "200,200",
+						"tl" : "150,150",
 						"scale" : 2.5,
-						"angle" : 90.0
+						"angle" : -135.0
 					},
 					{
 						"id" : 2,
 						"offset" : 64,
 						"type" : "Openlights_32LED_Bar",
-						"tl" : "200,100",
-						"scale" : 3.5,
-						"angle" : 45.0
+						"tl" : "100,50",
+						"scale" : 3.0,
+						"angle" : 65.0
 					}
 				]
 			}

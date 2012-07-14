@@ -54,7 +54,7 @@ if __name__ == '__main__':
                 x, y = map(int, loc.split(','))
                 h = float(n) / np
                 (r, g, b) = map(lambda f: int(255.0 * f), colorsys.hsv_to_rgb(h, 1.0, 1.0))
-                pygame.draw.circle(ts, (r, g, b), (x, y), 1)
+                pygame.draw.circle(ts, (r, g, b), (x, y), 2, 0)
                 n += 1
 
 
@@ -65,9 +65,10 @@ if __name__ == '__main__':
             positions[fixture["id"]] = [tlx, tly, angle, scale]
             render_surfaces[fixture["id"]] = ts
 
+    print "Setup done"
 
     while True:
-        event = pygame.event.wait()
+        event = pygame.event.poll()
         if event.type == pygame.QUIT:
             sys.exit(0)
         if event.type == pygame.KEYDOWN:
@@ -82,7 +83,9 @@ if __name__ == '__main__':
         #        sys.exit()
 
         for key, s in render_surfaces.iteritems():
+
             s = pygame.transform.rotozoom(s, positions[key][2], positions[key][3])
+            s.set_colorkey((0, 0, 0))
             sc.blit(s, (positions[key][0], positions[key][1]))
 
         screen.blit(sc, sc.get_rect())
