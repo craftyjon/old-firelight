@@ -1,0 +1,84 @@
+{
+	"fixture_types" : [{
+		"name" : "Openlights_32LED_Bar",
+		"num_pixels" : 32,
+		"channels_per_pixel" : 3,
+		"bits_per_channel" : 8,
+		"boundbox" : "66,5",
+		"pixel_locations" : [
+			"0,3",
+			"2,3",
+			"4,3",
+			"6,3",
+			"8,3",
+			"10,3",
+			"12,3",
+			"14,3",
+			"16,3",
+			"18,3",
+			"20,3",
+			"22,3",
+			"24,3",
+			"26,3",
+			"28,3",
+			"30,3",
+			"32,3",
+			"34,3",
+			"36,3",
+			"38,3",
+			"40,3",
+			"42,3",
+			"44,3",
+			"46,3",
+			"48,3",
+			"50,3",
+			"52,3",
+			"54,3",
+			"56,3",
+			"58,3",
+			"60,3",
+			"62,3",
+			"64,3"
+		]
+	}],
+
+	"surface" : {
+		"name" : "Test Surface",
+		"dimensions" : "320,240",
+		"strands" : [
+			{
+				"name" : "Strand1",
+				"type" : "Openlights_Ethernet_Node",
+				"address" : 0,
+				"num_pixels" : 512,
+				"ip_address" : "192.168.50.2",
+				"fixtures" : [
+					{
+						"id" : 0,
+						"offset" : 0,
+						"type" : "Openlights_32LED_Bar",
+						"tl" : "100,100",
+						"scale" : 2.0,
+						"angle" : 0.0
+					},
+					{
+						"id" : 1,
+						"offset" : 32,
+						"type" : "Openlights_32LED_Bar",
+						"tl" : "200,200",
+						"scale" : 2.5,
+						"angle" : 90.0
+					},
+					{
+						"id" : 2,
+						"offset" : 64,
+						"type" : "Openlights_32LED_Bar",
+						"tl" : "200,100",
+						"scale" : 3.5,
+						"angle" : 45.0
+					}
+				]
+			}
+		]
+	}
+}
