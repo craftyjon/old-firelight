@@ -42,7 +42,7 @@
 		]
 	}],
 
-	"surface" : {
+	"surfaces" : [{
 		"name" : "Test Surface",
 		"dimensions" : "640,480",
 		"strands" : [
@@ -52,6 +52,7 @@
 				"address" : 0,
 				"num_pixels" : 512,
 				"ip_address" : "192.168.50.2",
+				"port" : 5202,
 				"fixtures" : [
 					{
 						"id" : 0,
@@ -96,5 +97,5 @@
 				]
 			}
 		]
-	}
+	}]
 }
