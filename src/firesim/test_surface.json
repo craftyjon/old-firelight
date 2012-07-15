@@ -57,25 +57,41 @@
 						"id" : 0,
 						"offset" : 0,
 						"type" : "Openlights_32LED_Bar",
-						"tl" : "35,40",
-						"scale" : 2.0,
-						"angle" : 0.0
+						"tl" : "190,50",
+						"scale" : 3.0,
+						"angle" : "60.0"
 					},
 					{
 						"id" : 1,
 						"offset" : 32,
 						"type" : "Openlights_32LED_Bar",
-						"tl" : "200,220",
-						"scale" : 4.0,
-						"angle" : -135.0
+						"tl" : "320,50",
+						"scale" : 3.0,
+						"angle" : -60.0
 					},
 					{
 						"id" : 2,
 						"offset" : 64,
 						"type" : "Openlights_32LED_Bar",
-						"tl" : "170,200",
+						"tl" : "210,230",
 						"scale" : 3.0,
-						"angle" : -35.0
+						"angle" : 0.0
+					},
+					{
+						"id" : 3,
+						"offset" : 96,
+						"type" : "Openlights_32LED_Bar",
+						"tl" : "320,250",
+						"scale" : 3.0,
+						"angle" : 60.0
+					},
+					{
+						"id" : 4,
+						"offset" : 128,
+						"type" : "Openlights_32LED_Bar",
+						"tl" : "190,250",
+						"scale" : 3.0,
+						"angle" : -60.0
 					}
 				]
 			}

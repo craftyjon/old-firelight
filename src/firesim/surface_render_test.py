@@ -37,7 +37,7 @@ def redraw():
 
             positions[fixture["id"]] = [tlx, tly, angle, scale]
             render_surfaces[fixture["id"]] = ts
-    colorshift += 0.003
+    colorshift += 0.006
 
 if __name__ == '__main__':
     json_data = open("test_surface.json")
@@ -70,13 +70,15 @@ if __name__ == '__main__':
     clock = pygame.time.Clock()
 
     while True:
+
         event = pygame.event.poll()
+
         if event.type == pygame.QUIT:
             sys.exit(0)
+
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
                 sys.exit(0)
-
 
         redraw()
 
@@ -87,6 +89,8 @@ if __name__ == '__main__':
             sc.blit(s, (positions[key][0], positions[key][1]))
 
         screen.blit(sc, sc.get_rect())
-        clock.tick(60)
-        pygame.display.set_caption('%d fps' % clock.get_fps())
+
+        clock.tick(25)  # Limit FPS if desired to reduce CPU usage
+
+        pygame.display.set_caption('FireSim - %d fps' % clock.get_fps())
         pygame.display.flip()
