@@ -71,11 +71,12 @@ class ConfigLoader:
                 for cstr in cs['strands']:
 
                     strand = Strand(cstr['name'], cstr['type'], cstr['address'], cstr['num_pixels'], cstr['ip_address'], cstr['port'])
-                    #...
+
                     for fix in cstr['fixtures']:
 
-                        #...
-                        pass
+                        position = map(int, fix['tl'].split(','))
+                        fixture = Fixture(fix['id'], fix['offset'], fix['type'], position, fix['scale'], fix['angle'])
+                        strand.fixtures.append(fixture)
 
                     s.strands.append(strand)
 

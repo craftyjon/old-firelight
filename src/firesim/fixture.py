@@ -7,3 +7,6 @@ class Fixture:
         self.position = position
         self.scale = scale
         self.angle = angle
+
+    def __repr__(self):
+        return "Fixture: {id=%d, offset=%d, type='%s'}" % (self.id, self.offset, self.type)

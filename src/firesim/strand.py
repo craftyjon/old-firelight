@@ -10,4 +10,7 @@ class Strand:
         self.fixtures = []
 
     def __repr__(self):
-        return "Strand: {name='%s', address=%d, num_pixels=%d, net=%s:%d}" % (self.name, self.address, self.num_pixels, self.ip_address, self.port)
+        s = "Strand: {name='%s', address=%d, num_pixels=%d, net=%s:%d}" % (self.name, self.address, self.num_pixels, self.ip_address, self.port)
+        for fix in self.fixtures:
+            s += '\n\t\t' + repr(fix)
+        return s

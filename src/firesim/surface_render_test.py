@@ -50,7 +50,7 @@ if __name__ == '__main__':
         print "Error: no fixture types found in config file"
         sys.exit(1)
 
-    config_surface = data.get("surface", None)
+    config_surface = data.get("surfaces", None)[0]
     if config_surface is None:
         print "Error: no surface found in config file"
         sys.exit(1)
