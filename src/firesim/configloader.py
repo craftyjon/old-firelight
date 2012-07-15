@@ -46,7 +46,7 @@ class ConfigLoader:
     def load(self):
         if not self.file_loaded:
             print "Error: no file loaded"
-            return
+            return None
 
         co = ConfigObject()
 
@@ -56,6 +56,12 @@ class ConfigLoader:
             for ct in cft:
                 boundbox = map(int, ct['boundbox'].split(','))
                 t = FixtureType(ct['name'], ct['num_pixels'], tuple(boundbox), ct['channels_per_pixel'], ct['bits_per_channel'])
+
+                for loc in ct['pixel_locations']:
+                    locn = map(int, loc.split(','))
+                    pixel = Pixel(locn, t.channels_per_pixel, t.bits_per_channel)
+                    t.pixel_locations.append(pixel)
+
                 co.fixture_types.append(t)
 
         csl = self.cd.get("surfaces", None)
@@ -75,7 +81,9 @@ class ConfigLoader:
                     for fix in cstr['fixtures']:
 
                         position = map(int, fix['tl'].split(','))
-                        fixture = Fixture(fix['id'], fix['offset'], fix['type'], position, fix['scale'], fix['angle'])
+                        ft = co.fixture_types[next(index for (index, d) in enumerate(co.fixture_types) if d.name == fix['type'])]
+                        fixture = Fixture(fix['id'], fix['offset'], ft, position, fix['scale'], fix['angle'])
+
                         strand.fixtures.append(fixture)
 
                     s.strands.append(strand)
