@@ -22,7 +22,7 @@ def redraw():
             ts = pygame.Surface((bbox_x, bbox_y))
             ts.fill((50, 50, 50))
 
-            np = len(fixture.type.pixel_locations) / 2.0
+            np = len(fixture.type.pixel_locations) / 0.5
             n = 0
 
             for pixel in fixture.type.pixel_locations:
@@ -38,7 +38,8 @@ def redraw():
 
             positions[fixture.id] = [tlx, tly, angle, scale]
             render_surfaces[fixture.id] = ts
-    colorshift += 0.016
+    colorshift += 0.01
+
 
 if __name__ == '__main__':
 
