@@ -38,7 +38,7 @@ def redraw():
 
             positions[fixture.id] = [tlx, tly, angle, scale]
             render_surfaces[fixture.id] = ts
-    colorshift += 0.01
+    colorshift += 0.0075
 
 
 if __name__ == '__main__':
