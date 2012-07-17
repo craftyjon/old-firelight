@@ -4,14 +4,6 @@
 		"selected_items":
 		[
 			[
-				"config",
-				"config_fixture_types	(global, instance)"
-			],
-			[
-				"SimSer",
-				"SimServerFactory	(global, class)"
-			],
-			[
 				"current_",
 				"current_preset_obj"
 			],
@@ -27,49 +19,8 @@
 			"file": "firesim.py",
 			"settings":
 			{
-				"buffer_size": 709,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "simwindow.py",
-			"settings":
-			{
-				"buffer_size": 1811,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "simgui.kv",
-			"settings":
-			{
-				"buffer_size": 333,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "settings.json",
-			"settings":
-			{
-				"buffer_size": 431,
-				"line_ending": "Unix",
-				"name": "["
-			}
-		},
-		{
-			"file": "test_surface.json",
-			"settings":
-			{
-				"buffer_size": 1287,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "surface_render_test.py",
-			"settings":
-			{
-				"buffer_size": 2604,
-				"line_ending": "Unix"
+				"buffer_size": 623,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -77,48 +28,24 @@
 			"settings":
 			{
 				"buffer_size": 1748,
-				"line_ending": "Unix"
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "simwindow.py",
+			"settings":
+			{
+				"buffer_size": 1811,
+				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "Packages/Python/Python.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 375.0,
 		"selected_items":
 		[
-			[
-				"linter",
-				"SublimeLinter: Show Error List"
-			],
-			[
-				"git push",
-				"Git: Push"
-			],
-			[
-				"git commit",
-				"Git: Commit"
-			],
-			[
-				"git add ",
-				"Git: Add..."
-			],
-			[
-				"git add",
-				"Git: Add..."
-			],
-			[
-				"convert to spaces",
-				"Indentation: Convert to Spaces"
-			],
-			[
-				"toggle tabs",
-				"View: Toggle Tabs"
-			],
-			[
-				"tab s",
-				"View: Toggle Tabs"
-			],
 			[
 				"package",
 				"Package Control: List Packages"
@@ -154,6 +81,10 @@
 			[
 				"lint",
 				"SublimeLinter: Disable Linting"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
 			],
 			[
 				"git gui",
@@ -196,7 +127,7 @@
 				"Package Control: List Packages"
 			]
 		],
-		"width": 449.0
+		"width": 522.0
 	},
 	"console":
 	{
@@ -213,14 +144,7 @@
 	},
 	"file_history":
 	[
-		"/home/jevans/workspace/patterngen/pgui.py",
-		"/home/jevans/.config/sublime-text-2/Packages/User/SublimeLinter.sublime-settings",
-		"/home/jevans/.config/sublime-text-2/Packages/User/Python.sublime-settings",
-		"/home/jevans/.config/sublime-text-2/Packages/SublimeLinter/README.md",
-		"/home/jevans/.config/sublime-text-2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
-		"/home/jevans/.config/sublime-text-2/Packages/User/JSON.sublime-settings",
-		"/home/jevans/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
-		"/home/jevans/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/C/Program Files (x86)/OpenVPN/config/jee-ondt-laptop.ovpn",
 		"/C/Users/jonathan.evans/Documents/kivy_demo.py",
 		"/C/GitRoot/ANIHardware/anihardware/PyHardwareTest/test.py",
 		"/C/CVSRoot/iDPP_Python_Utils/Lib/DPP_HT.py",
@@ -340,7 +264,14 @@
 		"/C/Users/jonathan.evans/.ssh/id_rsa",
 		"/C/Users/jonathan.evans/.ssh/id_rsa.pub",
 		"/C/CVSRoot/PIC/PCB-DELTA/monitor.c",
-		"/C/CVSRoot/PIC/DOCK-DELTA/monitor.c"
+		"/C/CVSRoot/PIC/DOCK-DELTA/monitor.c",
+		"/C/CVSRoot/PIC/PCB-DELTA/a2d.h",
+		"/C/CVSRoot/PIC/PCB-DELTA/boardcon.h",
+		"/C/CVSRoot/PIC/PCB-DELTA/init.c",
+		"/C/CVSRoot/PIC/PCB-DELTA/innovx.c",
+		"/C/CVSRoot/PIC/PCB-DELTA/a2d.c",
+		"/C/Users/jonathan.evans/AppData/Local/Temp/Temp1_PIC_Hi-Tech_C_I2C_for_EEPROM_24LC01B.zip/877_i2~1.c",
+		"/C/Users/jonathan.evans/AppData/Local/Temp/Temp1_PIC_Hi-Tech_C_I2C_for_24LC01_and_Dalla_temp.zip/ee.c"
 	],
 	"find":
 	{
@@ -362,8 +293,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			",0.5\",",
-			",0\",",
 			"U17",
 			"	",
 			"\\t",
@@ -428,8 +357,6 @@
 		"regex": false,
 		"replace_history":
 		[
-			",3\",",
-			",0.5\",",
 			"    ",
 			"\"/static",
 			".\\usb",
@@ -480,7 +407,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -488,15 +415,15 @@
 					"file": "firesim.py",
 					"settings":
 					{
-						"buffer_size": 709,
+						"buffer_size": 623,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								95,
-								95
+								17,
+								17
 							]
 						],
 						"settings":
@@ -596,312 +523,6 @@
 				},
 				{
 					"buffer": 1,
-					"file": "simwindow.py",
-					"settings":
-					{
-						"buffer_size": 1811,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								482,
-								482
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"text-indent": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"Python Django": "python"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "simgui.kv",
-					"settings":
-					{
-						"buffer_size": 333,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								22,
-								22
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "settings.json",
-					"settings":
-					{
-						"buffer_size": 431,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								60,
-								60
-							]
-						],
-						"settings":
-						{
-							"auto_name": "[",
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "test_surface.json",
-					"settings":
-					{
-						"buffer_size": 1287,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1058,
-								1058
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 663.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "surface_render_test.py",
-					"settings":
-					{
-						"buffer_size": 2604,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								903,
-								903
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"text-indent": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"spell_check": true,
-							"sublimelinter": true,
-							"sublimelinter_delay": 0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": false,
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"Python Django": "python"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 357.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
 					"file": "simserver.py",
 					"settings":
 					{
@@ -912,8 +533,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								371,
+								371
 							]
 						],
 						"settings":
@@ -1006,7 +627,118 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "simwindow.py",
+					"settings":
+					{
+						"buffer_size": 1811,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								579,
+								579
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"text-indent": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Python Django": "python"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1047,11 +779,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 173.0
-	},
-	"output.git":
-	{
-		"height": 112.0
+		"height": 160.0
 	},
 	"replace":
 	{
@@ -1068,11 +796,11 @@
 	},
 	"select_project":
 	{
-		"height": 500.0,
+		"height": 0.0,
 		"selected_items":
 		[
 		],
-		"width": 380.0
+		"width": 0.0
 	},
 	"show_minimap": true,
 	"show_open_files": true,
