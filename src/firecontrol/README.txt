@@ -1,0 +1,1 @@
+FireControl is a pc-based remote control for FireServe (used mainly for development)
