@@ -10,13 +10,20 @@ from configloader import ConfigLoader
 from simserver import SimServerFactory
 
 
+sim = None
 config = None
 colorshift = 0.0
 
 
+class FireSim:
+
+    def __init__(self):
+        self.config = None
+
+
 def redraw():
-    global colorshift, config
-    strands = config.surfaces[0].strands
+    global colorshift, sim
+    strands = sim.config.surfaces[0].strands
     for strand in strands:
 
         for fixture in strand.fixtures:
@@ -73,15 +80,17 @@ def tick():
 
 if __name__ == '__main__':
 
+    sim = FireSim()
+
     loader = ConfigLoader('test_surface.json')
 
-    config = loader.load()
+    sim.config = loader.load()
 
-    if config is None:
+    if sim.config is None:
         print "Exiting..."
         sys.exit(1)
 
-    (width, height) = config.surfaces[0].dimensions
+    (width, height) = sim.config.surfaces[0].dimensions
 
     pygame.init()
 
@@ -98,4 +107,5 @@ if __name__ == '__main__':
     tickCall = LoopingCall(tick)
     tickCall.start(1.0 / 30.0)
 
+    reactor.listenTCP(5200, SimServerFactory(sim))
     reactor.run()
