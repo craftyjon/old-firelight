@@ -50,7 +50,7 @@
 				"name" : "Strand1",
 				"type" : "Openlights_Ethernet_Node",
 				"address" : 0,
-				"num_pixels" : 512,
+				"num_pixels" : 4096,
 				"ip_address" : "192.168.50.2",
 				"port" : 5202,
 				"fixtures" : [

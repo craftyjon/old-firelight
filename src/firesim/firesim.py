@@ -12,10 +12,6 @@ from simserver import SimServerFactory
 from settings import FireSimSettings
 
 
-sim = None
-world = None
-
-
 class FireSim:
 
     def __init__(self, settings_file=None):
@@ -98,7 +94,7 @@ if __name__ == '__main__':
     sim.world = loader.load()
 
     if sim.world is None:
-        print "Exiting..."
+        print "No world loaded. Exiting..."
         sys.exit(1)
 
     sim.setup()

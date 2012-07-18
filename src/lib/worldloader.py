@@ -13,6 +13,7 @@ class WorldObject:
         self.loaded = False
         self.fixture_types = []
         self.surfaces = []
+        self.total_pixels = 0
 
     def __repr__(self):
         s = "WorldObject:"
@@ -77,6 +78,7 @@ class WorldLoader:
                 for cstr in cs['strands']:
 
                     strand = Strand(cstr['name'], cstr['type'], cstr['address'], cstr['num_pixels'], cstr['ip_address'], cstr['port'])
+                    co.total_pixels += cstr['num_pixels']
 
                     for fix in cstr['fixtures']:
 
