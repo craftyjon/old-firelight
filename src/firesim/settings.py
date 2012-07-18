@@ -5,6 +5,7 @@ class FireSimSettings(SettingsBase):
 
     def __init__(self, filename=None):
         SettingsBase.__init__(self, filename)
+        self.config = {}
         self.load()
 
     def load(self):
@@ -17,3 +18,5 @@ class FireSimSettings(SettingsBase):
             self.config['listen_port'] = self.cp.getint('FireSim', 'listen_port')
             self.config['world'] = self.cp.get('FireSim', 'world')
             print self.config
+        else:
+            print "Warning: could not load settings"

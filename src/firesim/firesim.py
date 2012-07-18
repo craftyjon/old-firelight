@@ -17,7 +17,10 @@ class FireSim:
     def __init__(self, settings_file=None):
         self.world = None
         self.settings = FireSimSettings(settings_file)
-        self.config = self.settings.config
+        if self.settings:
+            self.config = self.settings.config
+        else:
+            self.config = None
 
         self.colorshift = 0.0
         self.render_surfaces = {}
@@ -69,7 +72,7 @@ class FireSim:
             if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
                 reactor.stop()
 
-        self.redraw()
+    self.redraw()
 
         for key, s in self.render_surfaces.iteritems():
 
@@ -87,9 +90,9 @@ class FireSim:
 
 if __name__ == '__main__':
 
-    sim = FireSim(os.getcwd() + "\\settings.conf")
+    sim = FireSim(os.getcwd() + "/settings.conf")
 
-    loader = WorldLoader(os.getcwd() + "\\" + sim.config['world'])
+    loader = WorldLoader(os.getcwd() + "/" + sim.config['world'])
 
     sim.world = loader.load()
 
