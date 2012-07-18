@@ -14,7 +14,6 @@ from settings import FireSimSettings
 
 sim = None
 world = None
-colorshift = 0.0
 
 
 class FireSim:
@@ -24,62 +23,70 @@ class FireSim:
         self.settings = FireSimSettings(settings_file)
         self.config = self.settings.config
 
+        self.colorshift = 0.0
+        self.render_surfaces = {}
+        self.positions = {}
+        self.sc = None
+        self.width = -1
+        self.height = -1
 
-def redraw():
-    global colorshift, sim
-    strands = sim.world.surfaces[0].strands
-    for strand in strands:
+    def setup(self):
+        (self.width, self.height) = self.world.surfaces[0].dimensions
+        self.sc = pygame.Surface((self.width, self.height))
 
-        for fixture in strand.fixtures:
+    def redraw(self):
+        strands = self.world.surfaces[0].strands
+        for strand in strands:
 
-            (bbox_x, bbox_y) = fixture.type.boundbox
+            for fixture in strand.fixtures:
 
-            ts = pygame.Surface((bbox_x, bbox_y))
-            ts.fill((50, 50, 50))
+                (bbox_x, bbox_y) = fixture.type.boundbox
 
-            np = len(fixture.type.pixel_locations) / 0.5
-            n = 0
+                ts = pygame.Surface((bbox_x, bbox_y))
+                ts.fill((50, 50, 50))
 
-            for pixel in fixture.type.pixel_locations:
-                (x, y) = pixel.position
-                h = (float(n) / np) + colorshift
-                (r, g, b) = map(lambda f: int(255.0 * f), colorsys.hsv_to_rgb(h, 1.0, 1.0))
-                pygame.draw.circle(ts, (r, g, b), (x, y), 1, 0)
-                n += 1
+                np = len(fixture.type.pixel_locations) / 0.5
+                n = 0
 
-            tlx, tly = fixture.position
-            angle = float(fixture.angle)
-            scale = float(fixture.scale)
+                for pixel in fixture.type.pixel_locations:
+                    (x, y) = pixel.position
+                    h = (float(n) / np) + self.colorshift
+                    (r, g, b) = map(lambda f: int(255.0 * f), colorsys.hsv_to_rgb(h, 1.0, 1.0))
+                    pygame.draw.circle(ts, (r, g, b), (x, y), 1, 0)
+                    n += 1
 
-            positions[fixture.id] = [tlx, tly, angle, scale]
-            render_surfaces[fixture.id] = ts
-    colorshift += 0.0075
+                tlx, tly = fixture.position
+                angle = float(fixture.angle)
+                scale = float(fixture.scale)
 
+                self.positions[fixture.id] = [tlx, tly, angle, scale]
+                self.render_surfaces[fixture.id] = ts
+        self.colorshift += 0.0075
 
-def tick():
-    event = pygame.event.poll()
+    def tick(self):
+        event = pygame.event.poll()
 
-    if event.type == pygame.QUIT:
-        reactor.stop()
-
-    if event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
+        if event.type == pygame.QUIT:
             reactor.stop()
 
-    redraw()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
+                reactor.stop()
 
-    for key, s in render_surfaces.iteritems():
+        self.redraw()
 
-        s = pygame.transform.rotozoom(s, positions[key][2], positions[key][3])
-        s.set_colorkey((0, 0, 0))
-        sc.blit(s, (positions[key][0], positions[key][1]))
+        for key, s in self.render_surfaces.iteritems():
 
-    screen.blit(sc, sc.get_rect())
+            s = pygame.transform.rotozoom(s, self.positions[key][2], self.positions[key][3])
+            s.set_colorkey((0, 0, 0))
+            self.sc.blit(s, (self.positions[key][0], self.positions[key][1]))
 
-    clock.tick(30)  # Limit FPS if desired to reduce CPU usage
+        screen.blit(self.sc, self.sc.get_rect())
 
-    pygame.display.set_caption('FireSim - %d fps' % clock.get_fps())
-    pygame.display.flip()
+        clock.tick(30)  # Limit FPS if desired to reduce CPU usage
+
+        pygame.display.set_caption('FireSim - %d fps' % clock.get_fps())
+        pygame.display.flip()
 
 
 if __name__ == '__main__':
@@ -94,21 +101,15 @@ if __name__ == '__main__':
         print "Exiting..."
         sys.exit(1)
 
-    (width, height) = sim.world.surfaces[0].dimensions
-
+    sim.setup()
     pygame.init()
 
-    size = width, height
-    screen = pygame.display.set_mode(size)
+    screen = pygame.display.set_mode((sim.width, sim.height))
     pygame.event.set_allowed([QUIT, KEYDOWN, USEREVENT])
 
-    sc = pygame.Surface((width, height))
-
-    render_surfaces = {}
-    positions = {}
     clock = pygame.time.Clock()
 
-    tickCall = LoopingCall(tick)
+    tickCall = LoopingCall(sim.tick)
     tickCall.start(1.0 / 30.0)
 
     reactor.listenTCP(sim.config['listen_port'], SimServerFactory(sim))

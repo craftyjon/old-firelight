@@ -12,5 +12,3 @@ class SettingsBase:
 
         self.cp = ConfigParser.ConfigParser()
         self.cp.read(self.filename)
-
-        print self.cp.sections()
