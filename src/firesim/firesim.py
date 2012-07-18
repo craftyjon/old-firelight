@@ -1,3 +1,4 @@
+import os
 import sys
 import colorsys
 
@@ -6,24 +7,24 @@ from pygame.locals import *
 from twisted.internet import reactor
 from twisted.internet.task import LoopingCall
 
-from configloader import ConfigLoader
+from lib.worldloader import WorldLoader
 from simserver import SimServerFactory
 
 
 sim = None
-config = None
+world = None
 colorshift = 0.0
 
 
 class FireSim:
 
     def __init__(self):
-        self.config = None
+        self.world = None
 
 
 def redraw():
     global colorshift, sim
-    strands = sim.config.surfaces[0].strands
+    strands = sim.world.surfaces[0].strands
     for strand in strands:
 
         for fixture in strand.fixtures:
@@ -82,15 +83,15 @@ if __name__ == '__main__':
 
     sim = FireSim()
 
-    loader = ConfigLoader('test_surface.json')
+    loader = WorldLoader(os.getcwd() + "\\test_world.json")
 
-    sim.config = loader.load()
+    sim.world = loader.load()
 
-    if sim.config is None:
+    if sim.world is None:
         print "Exiting..."
         sys.exit(1)
 
-    (width, height) = sim.config.surfaces[0].dimensions
+    (width, height) = sim.world.surfaces[0].dimensions
 
     pygame.init()
 

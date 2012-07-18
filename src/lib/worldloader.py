@@ -7,7 +7,7 @@ from fixture import Fixture
 from pixel import Pixel
 
 
-class ConfigObject:
+class WorldObject:
 
     def __init__(self):
         self.loaded = False
@@ -15,7 +15,7 @@ class ConfigObject:
         self.surfaces = []
 
     def __repr__(self):
-        s = "ConfigObject:"
+        s = "WorldObject:"
         for t in self.fixture_types:
             s += "\n\t" + repr(t).replace('\n\t', '\n\t\t')
 
@@ -25,7 +25,7 @@ class ConfigObject:
         return s
 
 
-class ConfigLoader:
+class WorldLoader:
 
     def __init__(self, filename=None):
         self.open_file(filename)
@@ -37,7 +37,7 @@ class ConfigLoader:
                 try:
                     self.cd = json.load(f)
                 except:
-                    print "Error loading config from " + filename
+                    print "Error loading world from " + filename
                     self.cd = None
                     return
 
@@ -48,7 +48,7 @@ class ConfigLoader:
             print "Error: no file loaded"
             return None
 
-        co = ConfigObject()
+        co = WorldObject()
 
         cft = self.cd.get("fixture_types", None)
 
@@ -94,8 +94,8 @@ class ConfigLoader:
 
 
 if __name__ == '__main__':
-    cl = ConfigLoader('test_surface.json')
+    wl = WorldLoader('test_world.json')
 
-    co = cl.load()
+    wo = wl.load()
 
-    print co
+    print wo
