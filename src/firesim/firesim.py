@@ -9,6 +9,7 @@ from twisted.internet.task import LoopingCall
 
 from lib.worldloader import WorldLoader
 from simserver import SimServerFactory
+from settings import FireSimSettings
 
 
 sim = None
@@ -18,8 +19,10 @@ colorshift = 0.0
 
 class FireSim:
 
-    def __init__(self):
+    def __init__(self, settings_file=None):
         self.world = None
+        self.settings = FireSimSettings(settings_file)
+        self.config = self.settings.config
 
 
 def redraw():
@@ -81,9 +84,9 @@ def tick():
 
 if __name__ == '__main__':
 
-    sim = FireSim()
+    sim = FireSim(os.getcwd() + "\\settings.conf")
 
-    loader = WorldLoader(os.getcwd() + "\\test_world.json")
+    loader = WorldLoader(os.getcwd() + "\\" + sim.config['world'])
 
     sim.world = loader.load()
 
@@ -108,5 +111,5 @@ if __name__ == '__main__':
     tickCall = LoopingCall(tick)
     tickCall.start(1.0 / 30.0)
 
-    reactor.listenTCP(5200, SimServerFactory(sim))
+    reactor.listenTCP(sim.config['listen_port'], SimServerFactory(sim))
     reactor.run()
