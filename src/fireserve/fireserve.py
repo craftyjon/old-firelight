@@ -7,7 +7,6 @@ import colorsys
 
 from lib.util import *
 from lib.loopingthread import LoopingThread
-from lib.tcpmessage import TCPMessage
 
 from node import Node
 
@@ -39,7 +38,7 @@ class NodeUpdater(threading.Thread):
                 e = sys.exc_info()[0]
                 print "Error sending!", e
                 self.connect()
-                #time.sleep(1.0 / 1.0)
+                time.sleep(1.0 / 1.0)
 
     def stop(self):
         for node in self.node_list:
@@ -79,11 +78,15 @@ if __name__ == "__main__":
     #tickCall.start(1.0 / 30.0)
 
     #reactor.run()
-    pixels = [[0, 0, 0] for i in range(512)]
+    pixels = [[100, 64, 32] for i in range(24)]
 
-    updater = NodeUpdater([n])
-    updater.connect()
-    updater.start()
+    #updater = NodeUpdater([n])
+    #updater.connect()
+    #updater.start()
 
-    rainbow_loop = LoopingThread((1.0 / 2.0), tick)
-    rainbow_loop.start()
+    #rainbow_loop = LoopingThread((1.0 / 2.0), tick)
+    #rainbow_loop.start()
+
+    n.connect()
+    n.set_all(pixels)
+    n.disconnect()

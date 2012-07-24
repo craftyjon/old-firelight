@@ -23,24 +23,25 @@ class Node:
                 self.conn = None
                 print "Node connection failed: " + self.ip_addr + ":" + str(self.port)
                 return False
-        else:
-            self.disconnect()
-            return self.connect()
+        #else:
+            #self.disconnect()
+            #return self.connect()
         return True
 
     def disconnect(self):
         if self.conn:
-            self.conn.shutdown()
+            #self.conn.shutdown()
             self.conn.close()
 
     def set_all(self, pixels):
+        messages = []
         flat_pixels = [item for sublist in pixels for item in sublist]
 
         max_array_length = MAX_MESSAGE_LENGTH - 10
 
         if len(flat_pixels) < max_array_length:
             m = TCPMessage(CMD_SET_ALL, len(flat_pixels), flat_pixels)
-            print m
+            messages.append(m)
 
         else:
             offset = 0
@@ -51,8 +52,19 @@ class Node:
                 sublist.insert(0, a)
 
                 m = TCPMessage(CMD_SET, len(sublist), sublist)
-                print m
+                messages.append(m)
                 offset += max_array_length
+
+        for message in messages:
+            totalsent = 0
+            buf = message.serialized()
+            len_str = struct.pack("!H", len(buf))
+            self.conn.send(len_str)
+            while totalsent < len(buf):
+                sent = self.conn.send(buf[totalsent:])
+                if sent == 0:
+                    print "Error while sending"
+                totalsent += sent
 
 
 if __name__ == "__main__":
