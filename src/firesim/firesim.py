@@ -44,15 +44,16 @@ class FireSim:
                 ts = pygame.Surface((bbox_x, bbox_y))
                 ts.fill((50, 50, 50))
 
-                np = len(fixture.type.pixel_locations) / 0.5
-                n = 0
+                #np = len(fixture.type.pixels) / 0.5
+                #n = 0
 
-                for pixel in fixture.type.pixel_locations:
+                for pixel in fixture.type.pixels:
                     (x, y) = pixel.position
-                    h = (float(n) / np) + self.colorshift
-                    (r, g, b) = map(lambda f: int(255.0 * f), colorsys.hsv_to_rgb(h, 1.0, 1.0))
+                    #h = (float(n) / np) + self.colorshift
+                    #(r, g, b) = map(lambda f: int(255.0 * f), colorsys.hsv_to_rgb(h, 1.0, 1.0))
+                    (r, g, b) = pixel.get()
                     pygame.draw.circle(ts, (r, g, b), (x, y), 1, 0)
-                    n += 1
+                    #n += 1
 
                 tlx, tly = fixture.position
                 angle = float(fixture.angle)
@@ -60,7 +61,7 @@ class FireSim:
 
                 self.positions[fixture.id] = [tlx, tly, angle, scale]
                 self.render_surfaces[fixture.id] = ts
-        self.colorshift += 0.0075
+        #self.colorshift += 0.0075
 
     def tick(self):
         event = pygame.event.poll()

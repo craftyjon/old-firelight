@@ -6,7 +6,7 @@ class FixtureType:
         self.boundbox = boundbox
         self.channels_per_pixel = channels_per_pixel
         self.bits_per_channel = bits_per_channel
-        self.pixel_locations = []
+        self.pixels = []
 
     def __repr__(self):
         return "FixtureType: {name: '%s', num_pixels: %d}" % (self.name, self.num_pixels)

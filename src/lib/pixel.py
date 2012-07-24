@@ -8,3 +8,9 @@ class Pixel:
 
     def __repr__(self):
         return "Pixel: {position: (%d, %d)}" % ((self.position[0], self.position[1]))
+
+    def set(self, r, g, b):
+        self.value = [r, g, b]
+
+    def get(self):
+        return (self.value[0], self.value[1], self.value[2])

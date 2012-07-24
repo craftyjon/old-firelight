@@ -14,6 +14,7 @@ class WorldObject:
         self.fixture_types = []
         self.surfaces = []
         self.total_pixels = 0
+        self.active_surface = 0
 
     def __repr__(self):
         s = "WorldObject:"
@@ -24,6 +25,9 @@ class WorldObject:
             s += "\n\t" + repr(surf).replace('\n\t', '\n\t\t')
 
         return s
+
+    def get_active_surface(self):
+        return self.surfaces[self.active_surface]
 
 
 class WorldLoader:
@@ -61,7 +65,7 @@ class WorldLoader:
                 for loc in ct['pixel_locations']:
                     locn = map(int, loc.split(','))
                     pixel = Pixel(locn, t.channels_per_pixel, t.bits_per_channel)
-                    t.pixel_locations.append(pixel)
+                    t.pixels.append(pixel)
 
                 co.fixture_types.append(t)
 
@@ -84,7 +88,7 @@ class WorldLoader:
 
                         position = map(int, fix['tl'].split(','))
                         ft = co.fixture_types[next(index for (index, d) in enumerate(co.fixture_types) if d.name == fix['type'])]
-                        fixture = Fixture(fix['id'], fix['offset'], ft, position, fix['scale'], fix['angle'])
+                        fixture = Fixture(fix['id'], fix['offset'], ft, position, fix['scale'], fix['angle'], ft.num_pixels, ft.pixels)
 
                         strand.fixtures.append(fixture)
 

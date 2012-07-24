@@ -14,3 +14,13 @@ class Strand:
         for fix in self.fixtures:
             s += '\n\t\t' + repr(fix)
         return s
+
+    def set_all(self, pixel_list):
+        i = 0
+        for fix in self.fixtures:
+            for j in range(fix.num_pixels):
+                r = pixel_list[i + j][0]
+                g = pixel_list[i + j][1]
+                b = pixel_list[i + j][2]
+                fix.pixels[j].set(r, g, b)
+            i += fix.num_pixels
