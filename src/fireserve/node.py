@@ -41,6 +41,6 @@ class Node:
                 lambda p: p.callRemote(SetAll, values=pixel_list))
 
         def done(result):
-            print "SetAll returned ", result
+            pass
 
         defer.DeferredList([d]).addCallback(done)

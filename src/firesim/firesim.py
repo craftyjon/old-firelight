@@ -73,7 +73,7 @@ class FireSim:
             if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
                 reactor.stop()
 
-    self.redraw()
+        self.redraw()
 
         for key, s in self.render_surfaces.iteritems():
 
