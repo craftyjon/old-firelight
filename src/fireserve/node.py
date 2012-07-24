@@ -1,7 +1,8 @@
-#from twisted.internet import reactor, defer
-#from twisted.internet.protocol import ClientCreator
-#from twisted.protocols import amp
-#from lib.ampcommands import *
+import socket
+import struct
+
+from lib.tcpmessage import TCPMessage, MAX_MESSAGE_LENGTH
+from lib.tcpcommands import *
 
 
 class Node:
@@ -11,36 +12,50 @@ class Node:
         self.port = port
         self.node_type = ""
         self.num_pixels = 512
+        self.conn = None
 
     def connect(self):
-        pass
+        if self.conn is None:
+            try:
+                self.conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                self.conn.connect((self.ip_addr, self.port))
+            except socket.error:
+                self.conn = None
+                print "Node connection failed: " + self.ip_addr + ":" + str(self.port)
+                return False
+        else:
+            self.disconnect()
+            return self.connect()
+        return True
 
-    def update(self):
-        pass
+    def disconnect(self):
+        if self.conn:
+            self.conn.shutdown()
+            self.conn.close()
 
-#    def GetNodeInfo(self):
-#
-#        d = ClientCreator(reactor, amp.AMP).connectTCP(
-#            self.ip_addr, self.port).addCallback(
-#                lambda p: p.callRemote(GetNodeInfo))
-#
-#        def done(result):
-#            try:
-#                self.node_type = result[0][1]['node_type']
-#                self.num_pixels = result[0][1]['num_pixels']
-#                print "num_pixels: ", self.num_pixels
-#            except TypeError:
-#                print "Invalid return from GetNodeInfo", result
-#
-#        defer.DeferredList([d]).addCallback(done)
-#
-#    def SetAll(self, pixel_list):
-#
-#        d = ClientCreator(reactor, amp.AMP).connectTCP(
-#            self.ip_addr, self.port).addCallback(
-#                lambda p: p.callRemote(SetAll, values=pixel_list))
-#
-#        def done(result):
-#            pass
-#
-#        defer.DeferredList([d]).addCallback(done)
+    def set_all(self, pixels):
+        flat_pixels = [item for sublist in pixels for item in sublist]
+
+        max_array_length = MAX_MESSAGE_LENGTH - 10
+
+        if len(flat_pixels) < max_array_length:
+            m = TCPMessage(CMD_SET_ALL, len(flat_pixels), flat_pixels)
+            print m
+
+        else:
+            offset = 0
+            while (len(flat_pixels) - offset) > 0:
+                sublist = flat_pixels[offset:(offset + max_array_length)]
+                (a, b) = struct.unpack("BB", struct.pack("!H", offset))
+                sublist.insert(0, b)
+                sublist.insert(0, a)
+
+                m = TCPMessage(CMD_SET, len(sublist), sublist)
+                print m
+                offset += max_array_length
+
+
+if __name__ == "__main__":
+    n = Node('127.0.0.1', 5200)
+    pix = [[126, 50, 210] for i in range(32)]
+    n.set_all(pix)

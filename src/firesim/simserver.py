@@ -1,7 +1,7 @@
-from twisted.internet.protocol import Factory
-from twisted.protocols import amp
+#from twisted.internet.protocol import Factory
+#from twisted.protocols import amp
 
-from lib.ampcommands import *
+#from lib.ampcommands import *
 
 SIMULATOR_VERSION = 1
 PROTOCOL_VERSION = 1
