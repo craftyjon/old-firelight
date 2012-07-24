@@ -1,10 +1,10 @@
 """FireLight utilities"""
-import json
+import pickle
 
 
 def serialize(thing):
-    return json.dumps(thing)
+    return pickle.dumps(thing, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 def deserialize(string):
-    return json.loads(string)
+    return pickle.loads(string)
