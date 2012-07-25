@@ -41,33 +41,37 @@ class FireSim:
 
     def redraw(self):
         strands = self.world.surfaces[0].strands
+        font = pygame.font.SysFont(None, 11)
         for strand in strands:
 
-            for fixture in strand.fixtures:
+            for idx, fixture in enumerate(strand.fixtures):
 
                 (bbox_x, bbox_y) = fixture.type.boundbox
 
                 ts = pygame.Surface((bbox_x, bbox_y))
+                cs = pygame.Surface((bbox_x, bbox_y + 10))
                 ts.fill((50, 50, 50))
-
-                #np = len(fixture.type.pixels) / 0.5
-                #n = 0
+                pygame.draw.line(ts, (255, 255, 255), (0, 0), (0, bbox_y))
 
                 for pixel in fixture.type.pixels:
                     (x, y) = pixel.position
-                    #h = (float(n) / np) + self.colorshift
-                    #(r, g, b) = map(lambda f: int(255.0 * f), colorsys.hsv_to_rgb(h, 1.0, 1.0))
                     (r, g, b) = pixel.get()
                     pygame.draw.circle(ts, (r, g, b), (x, y), 1, 0)
-                    #n += 1
 
                 tlx, tly = fixture.position
                 angle = float(fixture.angle)
                 scale = float(fixture.scale)
 
+                text = font.render("%d" % idx, True, (255, 255, 255), (0, 0, 0))
+                r = text.get_rect()
+                r.centery = bbox_y + 5
+                r.centerx = bbox_x / 2
+
+                cs.blit(ts, ts.get_rect())
+                cs.blit(text, r)
+
                 self.positions[fixture.id] = [tlx, tly, angle, scale]
-                self.render_surfaces[fixture.id] = ts
-        #self.colorshift += 0.0075
+                self.render_surfaces[fixture.id] = cs
 
     def tick(self):
         event = pygame.event.poll()
