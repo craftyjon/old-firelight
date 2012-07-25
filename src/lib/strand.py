@@ -20,18 +20,20 @@ class Strand:
         pix = 0
         totalpix = 0
         for x in range(len(pixel_list)):
+            if pix > self.fixtures[fix].num_pixels - 1:
+                #print "Next fixture: pix = %d, x = %d" % (pix, x)
+                pix = 0
+                fix += 1
+
+            if fix > len(self.fixtures) - 1:
+                print "Warning: got more data than the strand length (%d vs %d)" % (totalpix, len(pixel_list))
+                return
+            pix += 1
+            totalpix += 1
+
             r = pixel_list[x][0]
             g = pixel_list[x][1]
             b = pixel_list[x][2]
             self.fixtures[fix].pixels[pix].set(r, g, b)
 
-            if pix > self.fixtures[fix].num_pixels - 1:
-                pix = 0
-                fix += 1
-            else:
-                pix += 1
-                totalpix += 1
-            if fix > len(self.fixtures) - 1:
-                print "Warning: got more data than the strand length (%d vs %d)" % (totalpix, len(pixel_list))
-                return
-        print "last fix = %d, last pix = %d" % (fix, pix)
+        #print "last fix = %d, last pix = %d" % (fix, pix)

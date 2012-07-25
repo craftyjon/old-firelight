@@ -57,8 +57,8 @@ class NodeUpdater(threading.Thread):
 def rainbow_tick():
     global colorshift, pixels, pixel_queue
 
-    for i in range(166):
-        h = (float(i) / 166) + colorshift
+    for i in range(160):
+        h = (float(i) / 160) + colorshift
         (r, g, b) = map(lambda f: int(255.0 * f), colorsys.hsv_to_rgb(h, 1.0, 1.0))
         pixels[i] = [r, g, b]
 
@@ -89,7 +89,7 @@ if __name__ == "__main__":
 
     n = Node(ip_addr="127.0.0.1", port=5200)
 
-    pixels = [[0, 0, 0] for i in range(166)]
+    pixels = [[0, 0, 0] for i in range(160)]
     pixel_queue.put(copy(pixels))
 
     signal.signal(signal.SIGINT, signal_handler)

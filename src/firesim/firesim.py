@@ -121,6 +121,8 @@ class FireSim:
                 tl = [message.data[3 * x], message.data[(3 * x) + 1], message.data[(3 * x) + 2]]
                 processed_data.append(tl)
 
+            #print "Got %d pixels" % len(processed_data)
+
             strand = self.world.surfaces[0].strands[0]
             strand.set_all(processed_data)
 
