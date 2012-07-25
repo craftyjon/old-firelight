@@ -13,8 +13,8 @@ class FireSimSettings(SettingsBase):
         if self.cp.has_section('FireSim'):
             print "Loading settings from file"
             self.config = {}
-            self.cp.defaults = {'listen_host': "127.0.0.1", 'listen_port': 5200, 'world': "test_world.json"}
-            self.config['listen_host'] = self.cp.get('FireSim', 'listen_host')
+            self.cp.defaults = {'listen_addr': "127.0.0.1", 'listen_port': 5200, 'world': "test_world.json"}
+            self.config['listen_addr'] = self.cp.get('FireSim', 'listen_addr')
             self.config['listen_port'] = self.cp.getint('FireSim', 'listen_port')
             self.config['world'] = self.cp.get('FireSim', 'world')
             print self.config

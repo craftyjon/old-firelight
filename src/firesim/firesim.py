@@ -1,15 +1,20 @@
 import os
 import sys
-import colorsys
-
+import Queue
 import pygame
 from pygame.locals import *
-from twisted.internet import reactor
-from twisted.internet.task import LoopingCall
 
 from lib.worldloader import WorldLoader
-from simserver import SimServerFactory
+from lib.loopingthread import LoopingThread
+from lib.tcpcommands import *
+
 from settings import FireSimSettings
+from simserver import SimServer
+
+
+global_sim_queue = None
+server = None
+tick_loop = None
 
 
 class FireSim:
@@ -67,11 +72,17 @@ class FireSim:
         event = pygame.event.poll()
 
         if event.type == pygame.QUIT:
-            reactor.stop()
+            self.shutdown()
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
-                reactor.stop()
+                self.shutdown()
+
+        try:
+            message = global_sim_queue.get(False)
+            self.process_message(message)
+        except Queue.Empty:
+            pass
 
         self.redraw()
 
@@ -87,6 +98,29 @@ class FireSim:
 
         pygame.display.set_caption('FireSim - %d fps' % clock.get_fps())
         pygame.display.flip()
+
+    def shutdown(self):
+        global server, tick_loop
+        if server:
+            server.stop()
+        tick_loop.stop()
+        sys.exit(0)
+
+    def process_message(self, message):
+        """Processes an incoming TCPMessage"""
+        print "Command: 0x%0.2X\tDataLength: 0x%0.4X\r\n" % (message.command, message.data_length)
+
+        if message.command == CMD_SET_ALL:
+            if (message.data_length % 3) != 0:
+                print "Error: bad data length: must be multiple of 3"
+                return
+
+            processed_data = []
+            for x in range(len(message.data) / 3):
+                processed_data.append([message.data[3 * x], message.data[(3 * x) + 1], message.data[(3 * x) + 2]])
+
+            strand = self.world.surfaces[0].strands[0]
+            strand.set_all(processed_data)
 
 
 if __name__ == '__main__':
@@ -109,8 +143,9 @@ if __name__ == '__main__':
 
     clock = pygame.time.Clock()
 
-    tickCall = LoopingCall(sim.tick)
-    tickCall.start(1.0 / 30.0)
+    server = SimServer(sim.config['listen_addr'], sim.config['listen_port'])
+    global_sim_queue = server.get_queue()
+    server.start()
 
-    reactor.listenTCP(sim.config['listen_port'], SimServerFactory(sim))
-    reactor.run()
+    tick_loop = LoopingThread((1.0 / 40.0), sim.tick)
+    tick_loop.run()

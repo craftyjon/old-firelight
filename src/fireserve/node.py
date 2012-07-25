@@ -59,6 +59,8 @@ class Node:
             totalsent = 0
             buf = message.serialized()
             len_str = struct.pack("!H", len(buf))
+            if not self.conn:
+                return False
             self.conn.send(len_str)
             while totalsent < len(buf):
                 sent = self.conn.send(buf[totalsent:])

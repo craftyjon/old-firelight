@@ -1,4 +1,5 @@
 import json
+from copy import deepcopy
 
 from fixturetype import FixtureType
 from surface import Surface
@@ -87,7 +88,7 @@ class WorldLoader:
                     for fix in cstr['fixtures']:
 
                         position = map(int, fix['tl'].split(','))
-                        ft = co.fixture_types[next(index for (index, d) in enumerate(co.fixture_types) if d.name == fix['type'])]
+                        ft = deepcopy(co.fixture_types[next(index for (index, d) in enumerate(co.fixture_types) if d.name == fix['type'])])
                         fixture = Fixture(fix['id'], fix['offset'], ft, position, fix['scale'], fix['angle'], ft.num_pixels, ft.pixels)
 
                         strand.fixtures.append(fixture)

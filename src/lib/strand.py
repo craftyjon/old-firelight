@@ -16,11 +16,19 @@ class Strand:
         return s
 
     def set_all(self, pixel_list):
-        i = 0
-        for fix in self.fixtures:
-            for j in range(fix.num_pixels):
-                r = pixel_list[i + j][0]
-                g = pixel_list[i + j][1]
-                b = pixel_list[i + j][2]
-                fix.pixels[j].set(r, g, b)
-            i += fix.num_pixels
+        fix = 0
+        pix = 0
+        for x in range(len(pixel_list)):
+            r = pixel_list[x][0]
+            g = pixel_list[x][1]
+            b = pixel_list[x][2]
+            self.fixtures[fix].pixels[pix].set(r, g, b)
+
+            if pix > self.fixtures[fix].num_pixels - 1:
+                pix = 0
+                fix += 1
+            else:
+                pix += 1
+            if fix > len(self.fixtures) - 1:
+                print "Warning: got less data than the strand length"
+                return

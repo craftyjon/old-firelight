@@ -1,7 +1,7 @@
 import SocketServer
 import struct
 
-from lib.tcpmessage import TCPMessage, MAX_MESSAGE_LENGTH
+from lib.tcpmessage import TCPMessage
 
 
 class EchoServer(SocketServer.BaseRequestHandler):
