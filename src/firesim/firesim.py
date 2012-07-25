@@ -1,5 +1,6 @@
 import os
 import sys
+import signal
 import Queue
 import pygame
 from pygame.locals import *
@@ -108,7 +109,7 @@ class FireSim:
 
     def process_message(self, message):
         """Processes an incoming TCPMessage"""
-        print "Command: 0x%0.2X\tDataLength: 0x%0.4X\r\n" % (message.command, message.data_length)
+        #print "Command: 0x%0.2X\tDataLength: 0x%0.4X\r\n" % (message.command, message.data_length)
 
         if message.command == CMD_SET_ALL:
             if (message.data_length % 3) != 0:
@@ -117,10 +118,21 @@ class FireSim:
 
             processed_data = []
             for x in range(len(message.data) / 3):
-                processed_data.append([message.data[3 * x], message.data[(3 * x) + 1], message.data[(3 * x) + 2]])
+                tl = [message.data[3 * x], message.data[(3 * x) + 1], message.data[(3 * x) + 2]]
+                processed_data.append(tl)
 
             strand = self.world.surfaces[0].strands[0]
             strand.set_all(processed_data)
+
+
+def signal_handler(signum, frame):
+    global updater, tick_loop
+    print "Caught signal, exiting..."
+    if server:
+        server.stop()
+    if tick_loop:
+        tick_loop.stop()
+    sys.exit(0)
 
 
 if __name__ == '__main__':
@@ -142,6 +154,7 @@ if __name__ == '__main__':
     pygame.event.set_allowed([QUIT, KEYDOWN, USEREVENT])
 
     clock = pygame.time.Clock()
+    signal.signal(signal.SIGINT, signal_handler)
 
     server = SimServer(sim.config['listen_addr'], sim.config['listen_port'])
     global_sim_queue = server.get_queue()

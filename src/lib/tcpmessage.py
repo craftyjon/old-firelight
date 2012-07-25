@@ -45,6 +45,8 @@ class TCPMessage:
 
         if expected_length != encoded_length:
             print "Error: bad packet header: got %d, expected %d" % (encoded_length, expected_length)
+            #for char in self.string:
+            #    print "0x%0.2X " % ord(char)
             return False
 
         self.command = struct.unpack("B", self.string[2:3])[0]
@@ -52,9 +54,10 @@ class TCPMessage:
 
         for char in self.string[5:]:
             self.data.append(struct.unpack("B", char)[0])
+        return True
 
     def encode(self):
-        length = 3 + self.data_length
+        length = 4 + self.data_length
         self.string = struct.pack("!H", length)
         self.string += struct.pack("!BH", self.command, self.data_length)
         for char in self.data:

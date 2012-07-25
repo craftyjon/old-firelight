@@ -8,20 +8,26 @@ from lib.tcpmessage import TCPMessage
 
 # TODO: Find a way to not have this global
 global_sim_queue = Queue()
+shutdown_flag = False
 
 
 class SimSocketServer(SocketServer.BaseRequestHandler):
 
-        def handle(self):
-            print "SimServer handling request"
-            len_buf = self.read(self.request, 2)
-            msg_len = struct.unpack("!H", len_buf)[0]
+        def __init__(self, request, client_address, server):
+            SocketServer.BaseRequestHandler.__init__(self, request, client_address, server)
+            self.exit_flag = False
 
-            data = self.read(self.request, msg_len).strip()
-            m = TCPMessage()
-            m.decode(data)
-            # TODO: Is infinite blocking the best behavior?
-            global_sim_queue.put(m, block=True, timeout=None)
+        def handle(self):
+            global shutdown_flag
+            while not shutdown_flag:
+                len_buf = self.read(self.request, 2)
+                msg_len = struct.unpack("!H", len_buf)[0]
+
+                data = self.read(self.request, msg_len).strip()
+                m = TCPMessage()
+                if m.decode(data):
+                    # TODO: Is infinite blocking the best behavior?
+                    global_sim_queue.put(m, block=True, timeout=None)
 
         def read(self, socket, length):
             buf = ""
@@ -54,5 +60,7 @@ class SimServer(threading.Thread):
         self.server.serve_forever()
 
     def stop(self):
+        global shutdown_flag
         print "SimServer stopping..."
+        shutdown_flag = True
         self.server.shutdown()

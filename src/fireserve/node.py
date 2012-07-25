@@ -55,17 +55,19 @@ class Node:
                 messages.append(m)
                 offset += max_array_length
 
+        # TODO: replace send with sendall to simplify code
         for message in messages:
             totalsent = 0
             buf = message.serialized()
             len_str = struct.pack("!H", len(buf))
-            if not self.conn:
-                return False
+            #if not self.conn:
+            #    return False
+            self.connect()
             self.conn.send(len_str)
             while totalsent < len(buf):
                 sent = self.conn.send(buf[totalsent:])
                 if sent == 0:
-                    print "Error while sending"
+                    print "Error while sending -- socket broken"
                 totalsent += sent
 
 

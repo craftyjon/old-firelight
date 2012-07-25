@@ -18,6 +18,7 @@ class Strand:
     def set_all(self, pixel_list):
         fix = 0
         pix = 0
+        totalpix = 0
         for x in range(len(pixel_list)):
             r = pixel_list[x][0]
             g = pixel_list[x][1]
@@ -29,6 +30,7 @@ class Strand:
                 fix += 1
             else:
                 pix += 1
+                totalpix += 1
             if fix > len(self.fixtures) - 1:
-                print "Warning: got less data than the strand length"
+                print "Warning: got more data than the strand length (%d vs %d)" % (totalpix, len(pixel_list))
                 return
