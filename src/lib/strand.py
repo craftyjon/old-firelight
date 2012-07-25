@@ -34,3 +34,4 @@ class Strand:
             if fix > len(self.fixtures) - 1:
                 print "Warning: got more data than the strand length (%d vs %d)" % (totalpix, len(pixel_list))
                 return
+        print "last fix = %d, last pix = %d" % (fix, pix)
